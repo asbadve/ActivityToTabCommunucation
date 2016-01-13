@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/skyblue"
+          android:state_pressed="true" />
+    <item android:drawable="@drawable/box_custom_white_bg_blue_bg_layout"
+          android:state_focused="true" />
+    <item android:drawable="@drawable/box_custom_gray_bg_layout" />
+</selector>
