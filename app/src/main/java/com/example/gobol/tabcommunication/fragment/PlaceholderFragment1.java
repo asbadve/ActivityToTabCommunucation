@@ -2,6 +2,7 @@ package com.example.gobol.tabcommunication.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gobol.tabcommunication.R;
+import com.example.gobol.tabcommunication.ShowWebChartActivity;
 import com.example.gobol.tabcommunication.dialogs.KeyPadDialog;
 import com.example.gobol.tabcommunication.interfaces.IFragmentToActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
@@ -26,6 +28,7 @@ public class PlaceholderFragment1 extends Fragment implements View.OnClickListen
     private IFragmentToActivity mCallback;
     private Button btnFtoA;
     private Button btnFtoF;
+    private Button showChat;
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -57,11 +60,13 @@ public class PlaceholderFragment1 extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_placeholder_fragment1, container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+        showChat = (Button) rootView.findViewById(R.id.showchart);
         textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
         btnFtoA = (Button) rootView.findViewById(R.id.button);
         btnFtoF = (Button) rootView.findViewById(R.id.button2);
         btnFtoA.setOnClickListener(this);
         btnFtoF.setOnClickListener(this);
+        showChat.setOnClickListener(this);
         return rootView;
     }
 
@@ -95,6 +100,17 @@ public class PlaceholderFragment1 extends Fragment implements View.OnClickListen
                 showQtyKeyPad();
 
                 break;
+
+            case R.id.showchart:
+                Intent intent = new Intent(getActivity(), ShowWebChartActivity.class);
+                intent.putExtra("NUM1", 5);
+                intent.putExtra("NUM2", 4);
+                intent.putExtra("NUM3", 1);
+                intent.putExtra("NUM4", 5);
+                intent.putExtra("NUM5", 67);
+
+                startActivity(intent);
+                break;
         }
 
     }
@@ -107,4 +123,17 @@ public class PlaceholderFragment1 extends Fragment implements View.OnClickListen
     }
 
 
+//    public void chartButtonClick(View view) {
+//
+//        Intent intent = new Intent(getActivity(), ShowWebChartActivity.class);
+//
+//        intent.putExtra("NUM1", 5);
+//        intent.putExtra("NUM2", 4);
+//        intent.putExtra("NUM3", 1);
+//        intent.putExtra("NUM4", 5);
+//        intent.putExtra("NUM5", 67);
+//
+//        startActivity(intent);
+//
+//    }
 }

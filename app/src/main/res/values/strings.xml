@@ -17,4 +17,5 @@
     <string name="eight">8</string>
     <string name="nine">9</string>
     <string name="zero">0</string>
+    <string name="title_activity_show_web_chart">ShowWebChartActivity</string>
 </resources>

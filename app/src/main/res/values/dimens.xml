@@ -9,7 +9,6 @@
     <dimen name="app_bar_top_padding">0dp</dimen>
 
 
-
     <!-- Calculator -->
     <dimen name="Button_BS_txt_Size">24sp</dimen>
     <dimen name="Button_C_txt_Size">20sp</dimen>
