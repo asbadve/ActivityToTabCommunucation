@@ -1,4 +1,4 @@
-package com.example.gobol.tabcommunication;
+package com.example.gobol.tabcommunication.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,9 +8,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
+
+import com.example.gobol.tabcommunication.R;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,6 +51,24 @@ public class ShowWebChartActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.web_chart, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_click) {
+            startActivity(new Intent(ShowWebChartActivity.this, TestActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public static String loadJSONFromAsset(Context context) {

@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_id": "triple-grove-119105",
+    "project_number": "215760033430",
+    "name": "googleSignTest"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215760033430:android:31c3eba4e53f782d",
+        "client_id": "android:com.example.gobol.tabcommunication",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.example.gobol.tabcommunication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215760033430-sj8gp7la7ers45opbka4ev44jnl6veul.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gobol.tabcommunication",
+            "certificate_hash": "548BA198CE85751DAE2345994E1436960309DB1B"
+          }
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="AlertDialogBlackTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:background">@color/dialog_background</item>
+
+
+    </style>
+
+</resources>

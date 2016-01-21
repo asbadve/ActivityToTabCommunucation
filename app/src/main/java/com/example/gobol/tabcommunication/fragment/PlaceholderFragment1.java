@@ -14,12 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.gobol.tabcommunication.R;
-import com.example.gobol.tabcommunication.ShowWebChartActivity;
-import com.example.gobol.tabcommunication.dialogs.KeyPadDialog;
+import com.example.gobol.tabcommunication.activity.ShowWebChartActivity;
 import com.example.gobol.tabcommunication.interfaces.IFragmentToActivity;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerView;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -116,10 +112,6 @@ public class PlaceholderFragment1 extends Fragment implements View.OnClickListen
     }
 
     private void showQtyKeyPad() {
-        boolean isDialogForEdit = false;
-        DialogFragment newFragment = KeyPadDialog.newInstance("Enter Qty", isDialogForEdit);
-        newFragment.setCancelable(false);
-        newFragment.show(getActivity().getSupportFragmentManager(), "dialog");
     }
 
 
