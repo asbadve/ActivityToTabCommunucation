@@ -317,7 +317,7 @@ public class DigitAlertDialogCreator implements View.OnClickListener, TextWatche
         titleTextView = (TextView) view.findViewById(R.id.titleTextView);
         titleTextView.setVisibility(View.GONE);
         numberTextView.addTextChangedListener(this);
-
+  
 
     }
 
