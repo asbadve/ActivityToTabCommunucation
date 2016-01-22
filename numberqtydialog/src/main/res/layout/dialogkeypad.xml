@@ -2,6 +2,7 @@
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="7"
@@ -16,28 +17,46 @@
         android:layout_weight="2.8"
         android:background="@color/faintblack"
         android:orientation="vertical"
-        android:weightSum="5.2">
+        android:weightSum="5.5">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:background="@color/dialog_background">
+            android:layout_weight="0.8"
+            android:background="@color/dialog_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_material_normal"
+                android:contentDescription="@string/action_settings"
+                android:gravity="center"
+                android:state_pressed="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dialog_title_text_size"
+                android:textStyle="bold"
+                tools:text="Enter quantity" />
 
             <TextView
                 android:id="@+id/numberTextView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
                 android:background="@drawable/button_style_material_normal"
                 android:contentDescription="@string/action_settings"
                 android:state_pressed="true"
                 android:textColor="@color/white"
                 android:textSize="@dimen/Entry_Button_txt_Size"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="34.45" />
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/key_board_screen_layout1"

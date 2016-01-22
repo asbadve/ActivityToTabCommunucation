@@ -1,3 +1,4 @@
 <resources>
     <dimen name="Entry_Button_txt_Size">15sp</dimen>
+    <dimen name="dialog_title_text_size">16sp</dimen>
 </resources>
