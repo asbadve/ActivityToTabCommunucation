@@ -1,1 +1,1 @@
-include ':app', ':numberqtydialog'
+include ':app', ':numberqtydialog', ':fabmenu'

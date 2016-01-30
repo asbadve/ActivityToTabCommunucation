@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TabCommunication.iml" filepath="$PROJECT_DIR$/TabCommunication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fabmenu/fabmenu.iml" filepath="$PROJECT_DIR$/fabmenu/fabmenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/numberqtydialog/numberqtydialog.iml" filepath="$PROJECT_DIR$/numberqtydialog/numberqtydialog.iml" />
     </modules>
   </component>
