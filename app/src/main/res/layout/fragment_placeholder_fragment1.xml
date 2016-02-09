@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -47,6 +48,44 @@
         android:layout_marginTop="30dp"
         android:onClick="chartButtonClick"
         android:text="show chart" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="MasterDetail"
+        android:text="Master Details" />
+
+    <Button
+        android:id="@+id/nested"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NestedScroll" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/tabtest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Tabtest" />
+
+        <com.example.gobol.tabcommunication.activity.testView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#ccc"
+            android:paddingBottom="40dp"
+            android:paddingLeft="20dp"
+            app:exampleColor="#33b5e5"
+            app:exampleDimension="24sp"
+            app:exampleDrawable="@android:drawable/ic_menu_add"
+            app:exampleString="Hello, testView" />
+    </RelativeLayout>
 
 
 </LinearLayout>

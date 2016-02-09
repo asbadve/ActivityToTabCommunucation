@@ -2,7 +2,9 @@ package com.example.gobol.tabcommunication.activity;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,15 +27,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.gobol.tabcommunication.fragment.PlusOneFragment;
+import com.example.gobol.tabcommunication.PersonDetailActivity;
+import com.example.gobol.tabcommunication.PersonListActivity;
 import com.example.gobol.tabcommunication.R;
 import com.example.gobol.tabcommunication.adapter.SectionsPagerAdapter;
 import com.example.gobol.tabcommunication.fragment.PlaceholderFragment1;
 import com.example.gobol.tabcommunication.fragment.PlaceholderFragment2;
+import com.example.gobol.tabcommunication.fragment.PlusOneFragment;
 import com.example.gobol.tabcommunication.fragment.TabFragment;
 import com.example.gobol.tabcommunication.interfaces.IFragmentToActivity;
 import com.example.gobol.tabcommunication.printer.MyPrintDocumentAdapter;
 import com.example.gobol.tabcommunication.printer.SecondFragment;
+
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+
+import nl.matshofman.saxrssreader.RssFeed;
+import nl.matshofman.saxrssreader.RssItem;
+import nl.matshofman.saxrssreader.RssReader;
 
 public class MainActivity extends AppCompatActivity implements IFragmentToActivity, NavigationView.OnNavigationItemSelectedListener, PlusOneFragment.OnFragmentInteractionListener {
 
@@ -139,6 +153,13 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             //doPrint();
+            startActivity(new Intent(MainActivity.this, PersonListActivity.class));
+
+//            try {
+//                saveRssFeed();
+//            } catch (IOException | SAXException e) {
+//                e.printStackTrace();
+//            }
             return true;
         } else if (id == R.id.action_refresh) {
             int position = tabLayout.getSelectedTabPosition();
@@ -163,6 +184,10 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void saveRssFeed() throws IOException, SAXException {
+        new RssAsyn().execute();
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
@@ -193,6 +218,7 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
             Log.i(LOG_TAG, "Fragment 2 is not initialized");
         }
     }
+
 
     @Override
     public boolean onNavigationItemSelected(final MenuItem menuItem) {
@@ -254,5 +280,34 @@ public class MainActivity extends AppCompatActivity implements IFragmentToActivi
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+
+    class RssAsyn extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            RssFeed feed = null;
+            try {
+                URL url = new URL("http://feeds.feedburner.com/blogspot/AndroidDevelopersBackstage?format=xml");
+                feed = RssReader.read(url);
+            } catch (SAXException | IOException e) {
+                e.printStackTrace();
+            }
+
+            ArrayList<RssItem> rssItems = null;
+            if (feed != null) {
+                rssItems = feed.getRssItems();
+                for (int i = 0; i < 4; i++) {
+                    Log.i("RSS Reader", rssItems.get(i).toString());
+                }
+//                for (RssItem rssItem : rssItems) {
+//                    Log.i("RSS Reader", rssItem.toString());
+//                    //Log.i("iss item to string", rssItem.getFeed().toString());
+//                }
+            }
+
+            return null;
+        }
     }
 }

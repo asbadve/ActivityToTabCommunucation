@@ -13,8 +13,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gobol.tabcommunication.PersonListActivity;
 import com.example.gobol.tabcommunication.R;
+import com.example.gobol.tabcommunication.activity.ScrollingTestActivity;
 import com.example.gobol.tabcommunication.activity.ShowWebChartActivity;
+import com.example.gobol.tabcommunication.activity.TabTest;
 import com.example.gobol.tabcommunication.interfaces.IFragmentToActivity;
 
 /**
@@ -60,10 +63,22 @@ public class PlaceholderFragment1 extends Fragment implements View.OnClickListen
         textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
         btnFtoA = (Button) rootView.findViewById(R.id.button);
         btnFtoF = (Button) rootView.findViewById(R.id.button2);
+        Button button12 = (Button) rootView.findViewById(R.id.button12);
+        button12.setOnClickListener(this);
+        Button nested = (Button) rootView.findViewById(R.id.nested);
+        nested.setOnClickListener(this);
+        Button tabtest = (Button) rootView.findViewById(R.id.tabtest);
+        tabtest.setOnClickListener(this);
+
+
         btnFtoA.setOnClickListener(this);
         btnFtoF.setOnClickListener(this);
         showChat.setOnClickListener(this);
         return rootView;
+    }
+
+    public void MasterDetail(View view) {
+
     }
 
     @Override
@@ -106,6 +121,19 @@ public class PlaceholderFragment1 extends Fragment implements View.OnClickListen
                 intent.putExtra("NUM5", 67);
 
                 startActivity(intent);
+                break;
+
+            case R.id.button12:
+                startActivity(new Intent(getActivity(), PersonListActivity.class));
+
+                break;
+            case R.id.nested:
+                startActivity(new Intent(getActivity(), ScrollingTestActivity.class));
+
+                break;
+            case R.id.tabtest:
+                startActivity(new Intent(getActivity(), TabTest.class));
+
                 break;
         }
 

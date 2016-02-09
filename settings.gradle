@@ -1,1 +1,2 @@
 include ':app', ':numberqtydialog', ':fabmenu'
+include ':sAXRSSReader'

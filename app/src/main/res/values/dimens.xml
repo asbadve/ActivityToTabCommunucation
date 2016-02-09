@@ -45,4 +45,9 @@
     <dimen name="Slidding_drawer_Stock_Plus_Button">15sp</dimen>
     <dimen name="Slidding_drawer_Stock_Plus_Button_height">40sp</dimen>
     <dimen name="report_listview_textSize">18sp</dimen>
+    <dimen name="app_bar_height">200dp</dimen>
+    <dimen name="app_bar_height_scrlloing">180dp</dimen>
+
+    <dimen name="item_width">200dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

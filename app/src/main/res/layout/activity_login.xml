@@ -98,6 +98,13 @@
                 android:id="@+id/statuslabel"
                 android:text="Status"/>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go withought sign in"
+                android:id="@+id/button11"
+                android:onClick="goToMainActivity" />
+
 
         </LinearLayout>
     </ScrollView>

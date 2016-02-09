@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/fabmenu" />
             <option value="$PROJECT_DIR$/numberqtydialog" />
+            <option value="$PROJECT_DIR$/sAXRSSReader" />
           </set>
         </option>
       </GradleProjectSettings>

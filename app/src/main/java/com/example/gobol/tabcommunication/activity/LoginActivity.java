@@ -161,6 +161,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         return gso;
     }
 
+    public void goToMainActivity(View view) {
+
+        startActivityForResult(new Intent(LoginActivity.this, MainActivity.class), REQUEST_CODE_FOR_MAIN_ACTIVITY);
+
+
+    }
+
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
